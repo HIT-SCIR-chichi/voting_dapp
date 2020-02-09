@@ -1,3 +1,4 @@
+# Linux下基于ganache-cli简单投票DAPP
 ## 写在前面
 - [博客地址：https://blog.csdn.net/qq_43481201/article/details/104235425](https://blog.csdn.net/qq_43481201/article/details/104235425)
 - [项目地址：https://gitee.com/jiaowochichi/voting](https://gitee.com/jiaowochichi/voting)
@@ -20,10 +21,10 @@ npm install # 安装依赖
 ## 运行
 1. 编译合约
 ```javascript
-# 重新开启一个bash，并进入到voting中，输入node，在node控制台中操作
+// 重新开启一个bash，并进入到voting中，输入node，在node控制台中操作
 var Web3 = require('web3');
 var solc = require('solc');
-var web3 = new Web3(new Web3.providers.HttpProvider('http://108.61.126.96:8080')); # 这里的网址和上面ganache-cli的网址一致
+var web3 = new Web3(new Web3.providers.HttpProvider('http://108.61.126.96:8080')); // 这里的网址和上面ganache-cli的网址一致
 var compiledCode = solc.compile(fs.readFileSync('Voting.sol').toString());
 ```
 2. 部署合约
