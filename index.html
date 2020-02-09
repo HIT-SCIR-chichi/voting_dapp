@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  	<title>投票</title>
+	  	<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+		<link rel="icon" href="favicon.ico" type="image/x-icon" />
+    		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	</head>
+	<body class="container">
+	  	<h1 align="center">简单投票DAPP</h1>
+	  	<div class="table-responsive">
+	    	<table class="table table-bordered">
+	      	<thead>
+				<tr>
+	      			<th>候选者</th>
+	      			<th>票数</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Alice</td>
+					<td id="candidate-1"></td>
+				</tr>
+				<tr>
+					<td>Bob</td>
+					<td id="candidate-2"></td>
+				</tr>
+				<tr>
+					<td>Cary</td>
+					<td id="candidate-3"></td>
+				</tr>   
+			</tbody>
+		</table>
+	</div>
+	<input type="text" id="candidate" />
+	<a href="#" onclick="voteForCandidate()" class="btn btn-primary">投票</a>
+	<div id="msg"></div>
+	</body>
+	<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+	<script src="./index.js"></script>
+</html>
+
