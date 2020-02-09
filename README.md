@@ -1,4 +1,7 @@
 # 基于以太坊的简单投票应用
+## 写在前面
+- [博客地址：https://blog.csdn.net/qq_43481201/article/details/104235425](https://blog.csdn.net/qq_43481201/article/details/104235425)
+- [参考网站：https://www.bilibili.com/video/av75649294?p=62](https://www.bilibili.com/video/av75649294?p=62)
 ## 运行前
 1. 安装node和npm
 2. 下载文件及模块
@@ -15,7 +18,7 @@ npm install # 安装依赖
 - host参数替换为你的服务器网址，port参数替换为你需要监听的端口
 ## 运行
 1. 编译合约
-```bash
+```javascript
 # 重新开启一个bash，并进入到voting中，输入node，在node控制台中操作
 var Web3 = require('web3');
 var solc = require('solc');
@@ -23,7 +26,7 @@ var web3 = new Web3(new Web3.providers.HttpProvider('http://108.61.126.96:8080')
 var compiledCode = solc.compile(fs.readFileSync('Voting.sol').toString());
 ```
 2. 部署合约
-```bash
+```javascript
 var Voting = compiledCode.contracts[':Voting'];
 var abi = JSON.parse(Voting.interface);
 var byteCode = Voting.bytecode;
