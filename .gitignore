@@ -1,2 +1,4 @@
 node_modules
 package-lock.json
+ganache_out_put.log
+out_put.log

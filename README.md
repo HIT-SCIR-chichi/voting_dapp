@@ -1,8 +1,8 @@
 # Linux下基于ganache-cli简单投票DAPP
 ## 写在前面
-- [博客地址：https://blog.csdn.net/qq_43481201/article/details/104235425](https://blog.csdn.net/qq_43481201/article/details/104235425)
-- [项目地址：https://gitee.com/jiaowochichi/voting](https://gitee.com/jiaowochichi/voting)
-- [参考网站：https://www.bilibili.com/video/av75649294?p=62](https://www.bilibili.com/video/av75649294?p=62)
+- 博客地址：[https://blog.csdn.net/qq_43481201/article/details/104235425](https://blog.csdn.net/qq_43481201/article/details/104235425)
+- 项目地址：[https://gitee.com/jiaowochichi/voting](https://gitee.com/jiaowochichi/voting)
+- 参考网站：[https://www.bilibili.com/video/av75649294?p=62](https://www.bilibili.com/video/av75649294?p=62)
 - 邮箱地址：<2584363094@qq.com>
 ## 运行前
 1. 安装node和npm
@@ -14,7 +14,7 @@ npm install # 安装依赖
 ```
 3. 运行ganache-cli
 ```bash
-./node_modules/.bin/ganache-cli --host 108.61.126.9 --port 8080
+./node_modules/.bin/ganache-cli --host "108.61.126.96" --port 8080
 ```
 - 需保证ganache-cli在整个服务器运行过程中一直运行
 - host参数替换为你的服务器网址，port参数替换为你需要监听的端口
@@ -38,7 +38,7 @@ for (let i = 0; i < candidates.length; i++){candidatesHex[i] = web3.utils.asciiT
 var account;
 web3.eth.getAccounts().then(function(res){account=res[0]});
 var VotingContract = new web3.eth.Contract(abi);
-var contractInstance = VotingContract.deploy({data:bytecode,arguments:[candidatesHex]}).send({from:account,gas:4700000});
+var contractInstance = VotingContract.deploy({data:byteCode,arguments:[candidatesHex]}).send({from:account,gas:4700000});
 ```
 3. 修改index.js
 - 修改第1行中的网址为你的ganache-cli监听网址
@@ -52,6 +52,6 @@ node server.js # 保证该进程一直存在，才可以使得网站被正常访
 ```
 ## 注意
 ```bash
-./node_modules/.bin/ganache-cli --host 108.61.126.9 --port 8080# 要保证一直运行
-node server.js # 要保证一直运行
+nohup ./node_modules/.bin/ganache-cli --host 108.61.126.9 --port 8080 > ganache_out.log 2>&1 & # 要保证一直运行，可以使用nohup命令，终端输出重定向到ganache_out.log文件中
+nohup node server.js > server_out.log 2>&1 &# 要保证一直运行，可以使用nohup命令，终端输出重定向到server_out.log文件中
 ```
